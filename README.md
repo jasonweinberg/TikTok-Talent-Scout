@@ -3,7 +3,7 @@ This program uses Selenium to scrape profile data by locating target elements vi
 
 ## How to Use
 Enter a TikTok user handle in one of the following formats:
-username, @username or `'https://www.tiktok.com/@username'`
+username, @username or `https://www.tiktok.com/@username`
 
 ## Data Output
 Selected TikTok profile(s) will export to Excel with the following columns:
