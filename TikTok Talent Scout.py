@@ -9,6 +9,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+# MUST REVIEW BEFORE RUNNING:
+# VIEW LINE 49 TO INSTALL LATEST CHROMEDRIVER
+# VIEW LINE 175 TO SET YOUR EXPORT FILE PATH
+
 # Validate the input URL to ensure it's a valid TikTok profile URL.
 def validate_tiktok_url(url):
     patterns = [
@@ -44,7 +48,8 @@ def scrape_profile(url, progress_bar):
     chrome_options.add_argument("--headless")  # Optional: run in headless mode
 
     # Set up Selenium WebDriver with webdriver-manager
-    chrome_service = Service(ChromeDriverManager().install())
+    # Insert your ChromeDriver path here
+    # e.g. chrome_service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
     try:
@@ -168,6 +173,7 @@ class TikTokScraperGUI(QWidget):
 
     def export_to_excel(self):
         options = QFileDialog.Options()
+        # Insert your file path here.
         file_path, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Excel Files (*.xlsx)", options=options)
         if file_path:
             self.save_profiles_to_excel(file_path)
